@@ -3,5 +3,36 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
+    "@romanhryts/angular-unsubscriber": {
+      "projectType": "library",
+      "root": "projects/romanhryts/angular-unsubscriber",
+      "sourceRoot": "projects/romanhryts/angular-unsubscriber/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/romanhryts/angular-unsubscriber/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/romanhryts/angular-unsubscriber/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/romanhryts/angular-unsubscriber/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/romanhryts/angular-unsubscriber/src/test.ts",
+            "tsConfig": "projects/romanhryts/angular-unsubscriber/tsconfig.spec.json",
+            "karmaConfig": "projects/romanhryts/angular-unsubscriber/karma.conf.js"
+          }
+        }
+      }
+    }
   }
 }
